@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<div>
+    <div>{{title}}</div>
+    <div>
+        <ul>
+            {{each list}}
+                <li>{{$value}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+</body>
+</html>
