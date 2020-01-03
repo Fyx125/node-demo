@@ -33,6 +33,7 @@ r1.get('/api/page/:page',async ctx=>{
    }
 });
 
+//vue-test 接口
 r1.get('/list',async ctx=>{
    ctx.body=[
        {id: '1', name: '玩具', price: 555, sales: 5555},
@@ -42,4 +43,41 @@ r1.get('/list',async ctx=>{
    ];
 });
 
+//vue-app1接口
+// 轮播图
+r1.get('/getlunbo',async ctx=>{
+    ctx.body=[
+        {src:'../../images/banner1_m.jpg'},
+        {src:'../../images/banner2_m.jpg'}
+    ];
+});
+//新闻资讯list列表
+r1.get('/getnewslist',async ctx=>{
+    ctx.body=[
+        {id:1,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'4'},
+        {id:2,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'3'},
+        {id:3,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'5'},
+        {id:4,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'1'},
+        {id:5,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'0'}
+    ];
+});
+//新闻资讯list列表newsinfo
+r1.get('/getnewsinfo/:id',async ctx=>{
+    const myData=[
+        {id:1,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'4',content:'买房还是炒股，21世纪人们买房无法拒绝的5大理由买房还是炒股，21世纪人们买房无法拒绝的5大理由'},
+        {id:2,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'3',content:'买房还是炒股，21世纪人们买房无法拒绝的5大理由买房还是炒股，21世纪人们买房无法拒绝的5大理由'},
+        {id:3,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'5',content:'买房还是炒股，21世纪人们买房无法拒绝的5大理由买房还是炒股，21世纪人们买房无法拒绝的5大理由'},
+        {id:4,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'1',content:'买房还是炒股，21世纪人们买房无法拒绝的5大理由买房还是炒股，21世纪人们买房无法拒绝的5大理由'},
+        {id:5,src:'../../images/shuijiao.jpg',title:'买房还是炒股，21世纪人们买房无法拒绝的5大理由',time:'2020-02-02 15:55:35',num:'0',content:'买房还是炒股，21世纪人们买房无法拒绝的5大理由买房还是炒股，21世纪人们买房无法拒绝的5大理由'}
+    ];
+    const id = ctx.params.id;
+    myData.forEach((item,index)=>{
+        console.log(item.id);
+        if (item.id == id) {
+            ctx.body=item;
+            console.log(ctx.body);
+            return;
+        }
+    })
 
+});
