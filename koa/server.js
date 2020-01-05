@@ -72,10 +72,8 @@ r1.get('/getnewsinfo/:id',async ctx=>{
     ];
     const id = ctx.params.id;
     myData.forEach((item,index)=>{
-        console.log(item.id);
         if (item.id == id) {
             ctx.body=item;
-            console.log(ctx.body);
             return;
         }
     })
