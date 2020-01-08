@@ -79,3 +79,136 @@ r1.get('/getnewsinfo/:id',async ctx=>{
     })
 
 });
+//新闻资讯list列表newsinfo的评论信息
+r1.get('/getcomments/:id/:pageindex',async ctx=>{
+    const myData=[
+        {id:1,pageIndex:1,message:[
+                {username:'匿名用户1',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户2',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户3',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户4',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户5',addtime:'2015-02-02 20:01:08',content:'评论一下咯'}
+            ]},
+        {id:1,pageIndex:2,message:[
+                {username:'匿名用户6',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户7',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户8',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户9',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户10',addtime:'2015-02-02 20:01:08',content:'评论一下咯'}
+            ]},
+        {id:1,pageIndex:3,message:[
+                {username:'匿名用户11',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户12',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户13',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户14',addtime:'2015-02-02 20:01:08',content:'评论一下咯'},
+                {username:'匿名用户15',addtime:'2015-02-02 20:01:08',content:'评论一下咯'}
+            ]}
+    ];
+    const id = ctx.params.id;
+    const pageIndex = ctx.params.pageindex;
+    myData.forEach((item,index)=>{
+        if (item.id == id &&item.pageIndex == pageIndex) {
+            ctx.body=item.message;
+            return;
+        }
+    })
+
+});
+
+// 图片分享列表数据--title
+r1.get('/getimgcategory',async ctx=>{
+    ctx.body=[
+        {id:1,title:'家居生活'},
+        {id:2,title:'摄影设计'},
+        {id:3,title:'明星美女'},
+        {id:4,title:'空间设计'},
+        {id:5,title:'户外设计'},
+        {id:6,title:'旅游风景'}
+    ];
+});
+// 图片分享列表数据--图片内容
+r1.get('/getimgs/:cateid',async ctx=>{
+    const id = ctx.params.cateid;
+    const data=[
+        {cateid:0,message:[
+                {id:1,title:'家居生活',src:'../../images/category/111.jpg',summary:'家居生活家居生活家居生活'},
+                {id:2,title:'家居生活',src:'../../images/category/222.jpg',summary:'家居生活家居生活家居生活'},
+                {id:3,title:'家居生活',src:'../../images/category/333.jpg',summary:'家居生活家居生活家居生活'},
+                {id:4,title:'家居生活',src:'../../images/category/444.jpg',summary:'家居生活家居生活家居生活'},
+                {id:5,title:'家居生活',src:'../../images/category/555.jpg',summary:'家居生活家居生活家居生活'},
+                {id:6,title:'家居生活',src:'../../images/category/666.jpg',summary:'家居生活家居生活家居生活'},
+                {id:7,title:'家居生活',src:'../../images/category/777.jpg',summary:'家居生活家居生活家居生活'},
+                {id:8,title:'家居生活',src:'../../images/category/888.jpg',summary:'家居生活家居生活家居生活'}
+            ]},
+        {cateid:1,message:[
+                {id:1,title:'家居生活',src:'../../images/category/444.jpg',summary:'家居生活家居生活家居生活家居生活'},
+                {id:2,title:'家居生活',src:'../../images/category/555.jpg',summary:'家居生活家居生活家居生活家居生活'},
+                {id:3,title:'家居生活',src:'../../images/category/333.jpg',summary:'家居生活'},
+                {id:4,title:'家居生活',src:'../../images/category/444.jpg',summary:'家居生活'},
+                {id:5,title:'家居生活',src:'../../images/category/555.jpg',summary:'家居生活'},
+            ]},
+        {cateid:2,message:[
+                {id:3,title:'家居生活',src:'../../images/category/333.jpg',summary:'家居生活家居生活家居生活家居生活'},
+                {id:4,title:'家居生活',src:'../../images/category/444.jpg',summary:'家居生活'},
+                {id:5,title:'家居生活',src:'../../images/category/555.jpg',summary:'家居生活家居生活家居生活家居生活'},
+                {id:6,title:'家居生活',src:'../../images/category/666.jpg',summary:'家居生活家居生活家居生活家居生活'},
+                {id:7,title:'家居生活',src:'../../images/category/777.jpg',summary:'家居生活'},
+                {id:8,title:'家居生活',src:'../../images/category/888.jpg',summary:'家居生活'}
+            ]}
+    ];
+    data.forEach((item,index)=>{
+        if (item.cateid == id) {
+            ctx.body=item.message;
+            return;
+        }
+    })
+});
+
+// 图片分享列表数据--图片内容
+r1.get('/getimginfo/:id',async ctx=>{
+    const id = ctx.params.id;
+    const data=[
+        {id:1,title:'家居生活1',num:1,time:'2020-02-02 15:55:35',content:'家居生活家居生活家居生活家居生活家居生活'},
+        {id:2,title:'家居生活2',num:2,time:'2020-02-02 15:55:35',content:'家居生活家居生活家居生活家居生活家居生活'},
+        {id:3,title:'家居生活3',num:3,time:'2020-02-02 15:55:35',content:'家居生活家居生活家居生活家居生活家居生活'}
+    ];
+    data.forEach((item,index)=>{
+        if (item.id == id) {
+            ctx.body=item;
+            return;
+        }
+    })
+});
+// 图片分享列表数据--图片内容-缩略图
+r1.get('/getthumimages/:id',async ctx=>{
+    const id = ctx.params.id;
+    const data=[
+        {id:1,message:[
+                {src:'../../images/category/111.jpg'},
+                {src:'../../images/category/222.jpg'},
+                {src:'../../images/category/333.jpg'},
+                {src:'../../images/category/444.jpg'},
+                {src:'../../images/category/555.jpg'}
+            ]},
+        {id:2,message:[
+                {src:'../../images/category/333.jpg'},
+                {src:'../../images/category/444.jpg'},
+                {src:'../../images/category/666.jpg'},
+                {src:'../../images/category/777.jpg'},
+                {src:'../../images/category/555.jpg'}
+            ]},
+        {id:3,message:[
+                {src:'../../images/category/666.jpg'},
+                {src:'../../images/category/222.jpg'},
+                {src:'../../images/category/777.jpg'},
+                {src:'../../images/category/444.jpg'},
+                {src:'../../images/category/555.jpg'}
+            ]}
+    ];
+    data.forEach((item,index)=>{
+        if (item.id == id) {
+            ctx.body=item.message;
+            return;
+        }
+    })
+});
