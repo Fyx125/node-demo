@@ -481,43 +481,43 @@ r1.get('/goods/info/:id', async ctx => {
     const data = [
         {
             id: 11, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 12, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 13, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 14, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 15, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 16, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 17, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 18, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 19, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
         {
             id: 20, title: '小米(Mi)小米Note 16G双网通版', time: '2012-02-02 02:02:02', abstract: '1111',
-            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30
+            goods_no: 'SD29365898564', oldprice: 1099, nowprice: 999, num: 30,src: '../../images/goods/phone.jpg'
         },
     ];
     data.forEach((item, index) => {
